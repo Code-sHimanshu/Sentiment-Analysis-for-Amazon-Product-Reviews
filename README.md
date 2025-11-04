@@ -71,7 +71,7 @@ sentiment-analysis-product-reviews/
 | `sentiment` | Label (Positive / Neutral / Negative) |
 
 ### ▶️ How to Run
-```bash
+
 # create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate
@@ -126,5 +126,3 @@ python -m src.models.predict_model
 - [Email](mailto:connecttohimanshu.singh@gmail.com)
 - [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
 - [GitHub](https://github.com/Code-sHimanshu)
-
-- **Source:** Amazon Product Reviews Dataset via [Kaggle](https://www.kaggle.com/datasets) 
