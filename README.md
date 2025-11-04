@@ -118,11 +118,11 @@ python -m src.models.predict_model
 
 - Automate model retraining using a CI/CD pipeline.
 
-🧑‍💻 Author
+### 🧑‍💻 Author
 
-Himanshu Singh
+**Himanshu Singh**
 
-• [Portfolio](https://dev-himanshusing.netlify.app/)
-• [Email](mailto:connecttohimanshu.singh@gmail.com)
-• [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
-• [GitHub](https://github.com/Code-sHimanshu/)
+- [Portfolio](https://dev-himanshusing.netlify.app/)
+- [Email](mailto:connecttohimanshu.singh@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
+- [GitHub](https://github.com/Code-sHimanshu)
