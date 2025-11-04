@@ -13,7 +13,7 @@ This project analyzes Amazon product reviews to determine sentiment (positive, n
 4. **Evaluation:** Evaluate using Accuracy, Precision, Recall, and F1-score.
 5. **Visualization:** Optionally, build a dashboard to visualize sentiment trends.
 
-### 📂 Folder Structure
+# 📂 Folder Structure
 
 sentiment-analysis-product-reviews/
 ├── data/
@@ -50,7 +50,7 @@ sentiment-analysis-product-reviews/
 └── README.md
 
 
-### 🧰 Tools & Libraries
+# 🧰 Tools & Libraries
 | Category | Tools |
 |-----------|--------|
 | **Programming** | Python 3.10+ |
@@ -59,7 +59,7 @@ sentiment-analysis-product-reviews/
 | **Version Control** | Git, Git LFS |
 | **Deployment** | Flask, Render / Docker |
 
-### 📊 Dataset
+# 📊 Dataset
 - **Source:** Amazon Product Reviews Dataset (via [Kaggle](https://www.kaggle.com/datasets) 
 - **Format:** CSV files containing review text and ratings.
 - **Location:** Stored under `data/raw/`
@@ -72,31 +72,39 @@ sentiment-analysis-product-reviews/
 
 # ▶️ How to Run
 
-### create and activate virtual environment
+### 1️⃣ create and activate virtual environment
+
 python -m venv venv
 venv\Scripts\activate
-### source venv/bin/activate  # (For Mac/Linux)
 
-### install dependencies
+
+### 2️⃣ install dependencies
+
 pip install -r requirements.txt
 
-### run preprocessing
+### 3️⃣ run preprocessing
+
 python src/data/make_dataset.py
 
 ### 4️⃣ Build features
+
 python -m src.features.build_features
 
 ### 5️⃣ Train models
+
 python -m src.models.train_model
 
 ### (Optional) Train multiple models and compare
+
 python -m src.models.multiple_models
 
 ### 6️⃣ Run predictions on new data
+
 python -m src.models.predict_model
 
 
-### 📈 Results
+# 📈 Results
+
       Model	                    Accuracy	    F1-Score
 
 -Logistic Regression	        ~93.7%	           0.93
@@ -109,7 +117,7 @@ python -m src.models.predict_model
 
 - Insights and prediction reports are available in the reports/ directory.
 
-🚀 Future Enhancements
+# 🚀 Future Enhancements
 
 - Incorporate deep learning models (e.g., LSTM, BERT).
 
