@@ -17,20 +17,36 @@ This project analyzes Amazon product reviews to determine sentiment (positive, n
 
 sentiment-analysis-product-reviews/
 ├── data/
+
 │ ├── raw/ <- Original datasets
+
 │ ├── interim/ <- Intermediate cleaned data
+
 │ └── processed/ <- Final processed dataset
+
 ├── notebooks/ <- Jupyter notebooks for EDA & modeling
+
 ├── src/ <- Source code
+
 │ ├── data/ <- Data loading scripts
+
 │ ├── features/ <- Feature extraction scripts
+
 │ ├── models/ <- Model training & prediction
+
+
 │ ├── utils/ <- Helper functions
+
 │ └── dashboard/ <- Dashboard app
+
 ├── tests/ <- Unit tests
+
 ├── docker/ <- Docker configuration
+
 ├── experiments/ <- Model reports, confusion matrices
+
 ├── requirements.txt
+
 └── README.md
 
 
@@ -105,10 +121,11 @@ python -m src.models.predict_model
 🧑‍💻 Author
 
 Himanshu Singh
-[🌐 Portfolio](https://dev-himanshusing.netlify.app/)
+🌐 [Portfolio](https://dev-himanshusing.netlify.app/) | 
 
-📧 [Email Me](mailto:connecttohimanshu.singh@gmail.com)
+📧 [Email](mailto:connecttohimanshu.singh@gmail.com) | 
 
-🔗 [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
+🔗 [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/) | 
 
 💻 [GitHub](https://github.com/Code-sHimanshu/)
+
