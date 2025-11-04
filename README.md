@@ -122,12 +122,7 @@ python -m src.models.predict_model
 
 Himanshu Singh
 
-[<img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white" />][portfolio]
-[<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />][email]
-[<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />][linkedin]
-[<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />][github]
-
-[portfolio]: https://dev-himanshusing.netlify.app/
-[email]: mailto:connecttohimanshu.singh@gmail.com
-[linkedin]: https://www.linkedin.com/in/connectto-himanshu/
-[github]: https://github.com/Code-sHimanshu/
+• [Portfolio](https://dev-himanshusing.netlify.app/)
+• [Email](mailto:connecttohimanshu.singh@gmail.com)
+• [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
+• [GitHub](https://github.com/Code-sHimanshu/)
