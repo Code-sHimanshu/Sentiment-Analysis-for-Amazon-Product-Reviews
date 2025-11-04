@@ -35,21 +35,80 @@ sentiment-analysis-product-reviews/
 
 
 ### 🧰 Tools & Libraries
-- **Programming:** Python  
-- **Libraries:** NLTK, spaCy, Scikit-learn, TensorFlow, Gensim, Matplotlib, Plotly, Flask  
+| Category | Tools |
+|-----------|--------|
+| **Programming** | Python 3.10+ |
+| **Libraries** | NLTK, spaCy, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Plotly |
+| **Environment** | Virtualenv / venv |
+| **Version Control** | Git, Git LFS |
+| **Deployment** | Flask, Render / Docker |
 
 ### 📊 Dataset
-- Source: Amazon Product Reviews Dataset (Kaggle / Datafiniti)
-- Files in `data/raw/`
+- **Source:** Amazon Product Reviews Dataset (via [Kaggle](https://www.kaggle.com/datasets) 
+- **Format:** CSV files containing review text and ratings.
+- **Location:** Stored under `data/raw/`
+
+| Column | Description |
+|---------|--------------|
+| `reviewText` | Customer review text |
+| `overall` | Numeric rating (1–5) |
+| `sentiment` | Label (Positive / Neutral / Negative) |
 
 ### ▶️ How to Run
 ```bash
 # create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate
+# source venv/bin/activate  # (For Mac/Linux)
 
 # install dependencies
 pip install -r requirements.txt
 
 # run preprocessing
 python src/data/make_dataset.py
+
+# 4️⃣ Build features
+python -m src.features.build_features
+
+# 5️⃣ Train models
+python -m src.models.train_model
+
+# (Optional) Train multiple models and compare
+python -m src.models.multiple_models
+
+# 6️⃣ Run predictions on new data
+python -m src.models.predict_model
+
+
+# 📈 Results
+      Model	                    Accuracy	    F1-Score
+-Logistic Regression	        ~93.7%	           0.93
+-Random   Forest	            ~95.3%	           0.95
+-XGBoost 	                    ~95%+              0.95
+
+- Random Forest achieved the highest accuracy among the tested models.
+
+- XGBoost provided balanced performance across precision and recall.
+
+- Insights and prediction reports are available in the reports/ directory.
+
+🚀 Future Enhancements
+
+- Incorporate deep learning models (e.g., LSTM, BERT).
+
+- Build an interactive dashboard to visualize sentiment trends.
+
+- Deploy API endpoint using Flask or FastAPI.
+
+- Automate model retraining using a CI/CD pipeline.
+
+🧑‍💻 Author
+
+Himanshu Singh
+[🌐 Portfolio](https://dev-himanshusing.netlify.app/)
+
+📧 [Email Me](mailto:connecttohimanshu.singh@gmail.com)
+
+🔗 [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
+
+💻 [GitHub](https://github.com/Code-sHimanshu/)
