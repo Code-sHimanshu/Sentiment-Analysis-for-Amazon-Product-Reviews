@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+nltk
+spacy
+tensorflow
+gensim
+matplotlib
+plotly
+flask
+pytest
+black
+gunicorn
