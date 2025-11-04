@@ -122,7 +122,9 @@ python -m src.models.predict_model
 
 **Himanshu Singh**
 
-- [Portfolio] (https://dev-himanshusing.netlify.app/)
-- [Email] (mailto:connecttohimanshu.singh@gmail.com)
-- [LinkedIn] (https://www.linkedin.com/in/connectto-himanshu/)
-- [GitHub] (https://github.com/Code-sHimanshu)
+- [Portfolio](https://dev-himanshusing.netlify.app/)
+- [Email](mailto:connecttohimanshu.singh@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/connectto-himanshu/)
+- [GitHub](https://github.com/Code-sHimanshu)
+
+- **Source:** Amazon Product Reviews Dataset via [Kaggle](https://www.kaggle.com/datasets) 
