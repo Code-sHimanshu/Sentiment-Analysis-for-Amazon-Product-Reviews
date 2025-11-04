@@ -70,34 +70,35 @@ sentiment-analysis-product-reviews/
 | `overall` | Numeric rating (1–5) |
 | `sentiment` | Label (Positive / Neutral / Negative) |
 
-### ▶️ How to Run
+# ▶️ How to Run
 
-# create and activate virtual environment
+### create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate
-# source venv/bin/activate  # (For Mac/Linux)
+### source venv/bin/activate  # (For Mac/Linux)
 
-# install dependencies
+### install dependencies
 pip install -r requirements.txt
 
-# run preprocessing
+### run preprocessing
 python src/data/make_dataset.py
 
-# 4️⃣ Build features
+### 4️⃣ Build features
 python -m src.features.build_features
 
-# 5️⃣ Train models
+### 5️⃣ Train models
 python -m src.models.train_model
 
-# (Optional) Train multiple models and compare
+### (Optional) Train multiple models and compare
 python -m src.models.multiple_models
 
-# 6️⃣ Run predictions on new data
+### 6️⃣ Run predictions on new data
 python -m src.models.predict_model
 
 
-# 📈 Results
+### 📈 Results
       Model	                    Accuracy	    F1-Score
+
 -Logistic Regression	        ~93.7%	           0.93
 -Random   Forest	            ~95.3%	           0.95
 -XGBoost 	                    ~95%+              0.95
@@ -118,7 +119,7 @@ python -m src.models.predict_model
 
 - Automate model retraining using a CI/CD pipeline.
 
-### 🧑‍💻 Author
+# 🧑‍💻 Author
 
 **Himanshu Singh**
 
