@@ -1,0 +1,27 @@
+# Step 1: Use Node.js to build the React (Vite) app
+FROM node:18-alpine AS build
+
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the frontend source code
+COPY . .
+
+# Build the production-ready static files
+RUN npm run build
+
+# Step 2: Use Nginx to serve the built files
+FROM nginx:alpine
+
+# Copy the build output to Nginx’s default public directory
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose the default Nginx port
+EXPOSE 80
+
+# Run Nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
