@@ -102,6 +102,49 @@ python -m src.models.multiple_models
 
 python -m src.models.predict_model
 
+### ⚠️ Troubleshooting: "npm error could not determine executable to run" (Windows / frontend)
+If `npx tailwindcss init -p` fails with "could not determine executable to run" or "'tailwindcss' is not recognized", follow these steps from the frontend folder:
+
+1. Verify Node/npm are installed:
+```bash
+node -v
+npm -v
+```
+
+2. Ensure you're in the frontend folder and package.json exists:
+```bash
+cd frontend
+dir package.json   # use ls package.json on WSL/mac
+# If missing:
+npm init -y
+```
+
+3. Install Tailwind and PostCSS locally:
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+4. Initialize Tailwind (pick one command if one fails):
+```bash
+npx tailwindcss init -p
+# If npx still errors, try:
+npm exec --package tailwindcss tailwindcss init -p
+# or
+npx --package tailwindcss@latest tailwindcss init -p
+```
+
+5. If you see "'tailwindcss' is not recognized..." or persistent npx errors:
+```bash
+npm cache verify
+# or (if necessary)
+npm cache clean --force
+# Try running the same commands in cmd.exe or Windows Terminal (not an unusual/isolated shell).
+```
+
+6. If none of the above fixes it, open the npm debug log referenced in the error (example path shown in your error):
+C:\Users\<your-user>\AppData\Local\npm-cache\_logs\<timestamp>-debug-0.log
+
+Then paste the last ~50 lines here and I'll help diagnose further.
 
 # 📈 Results
 

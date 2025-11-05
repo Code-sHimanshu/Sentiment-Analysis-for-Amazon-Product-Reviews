@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --amazon-black: #131921;
+  --amazon-dark-gray: #232f3e;
+  --amazon-orange: #ff9900;
+  --amazon-light: #f3f3f3;
+  --text-primary: #0f1111;
+  --text-secondary: #555;
+  --card-bg: #ffffff;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900;
+  font-family: 'Amazon Ember', Arial, sans-serif;
+  background-color: var(--amazon-light);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text-primary);
+}
+
+.card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+button {
+  background-color: var(--amazon-orange);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #f5a623;
+}
