@@ -47,7 +47,7 @@ It now includes a fully functional **Flask API** backend and a **React-based fro
 ## ▶️ How to Run
 
 ### 🧩 1. Backend (Flask API)
-```bash
+
 cd backend
 python -m venv venv
 venv\Scripts\activate
