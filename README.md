@@ -4,171 +4,155 @@
 E-commerce
 
 ### 🧠 Project Overview
-This project analyzes Amazon product reviews to determine sentiment (positive, negative, or neutral) and derive insights to improve product offerings.
+This project analyzes Amazon product reviews to determine sentiment (positive, negative, or neutral) and derive insights to improve product offerings.  
+It now includes a fully functional **Flask API** backend and a **React-based frontend dashboard** styled with **Tailwind CSS**, designed with an Amazon-like theme.
+
+---
 
 ### ⚙️ Steps
 1. **Data Preprocessing:** Clean and prepare review text (tokenize, remove stopwords, lemmatize).
-2. **Feature Extraction:** Convert text to numerical form using TF-IDF or Word2Vec embeddings.
-3. **Model Training:** Train classification models (Naive Bayes, Logistic Regression, LSTM).
-4. **Evaluation:** Evaluate using Accuracy, Precision, Recall, and F1-score.
-5. **Visualization:** Optionally, build a dashboard to visualize sentiment trends.
+2. **Feature Extraction:** Convert text to numerical form using TF-IDF.
+3. **Model Training:** Train classification models — Logistic Regression, Random Forest, and XGBoost.
+4. **Evaluation:** Evaluate models using Accuracy, Precision, Recall, and F1-score.
+5. **Visualization & Deployment:** Develop and serve an interactive Sentiment Dashboard.
 
-# 📂 Folder Structure
+---
 
-sentiment-analysis-product-reviews/
-├── data/
-
-│ ├── raw/ <- Original datasets
-
-│ ├── interim/ <- Intermediate cleaned data
-
-│ └── processed/ <- Final processed dataset
-
-├── notebooks/ <- Jupyter notebooks for EDA & modeling
-
-├── src/ <- Source code
-
-│ ├── data/ <- Data loading scripts
-
-│ ├── features/ <- Feature extraction scripts
-
-│ ├── models/ <- Model training & prediction
-
-
-│ ├── utils/ <- Helper functions
-
-│ └── dashboard/ <- Dashboard app
-
-├── tests/ <- Unit tests
-
-├── docker/ <- Docker configuration
-
-├── experiments/ <- Model reports, confusion matrices
-
-├── requirements.txt
-
-└── README.md
-
-
-# 🧰 Tools & Libraries
+## 🧰 Tools & Libraries
 | Category | Tools |
 |-----------|--------|
-| **Programming** | Python 3.10+ |
-| **Libraries** | NLTK, spaCy, Scikit-learn, XGBoost, Pandas, NumPy, Matplotlib, Plotly |
-| **Environment** | Virtualenv / venv |
+| **Programming** | Python 3.10+, JavaScript (ES6+) |
+| **ML Libraries** | Scikit-learn, XGBoost, Pandas, NumPy |
+| **NLP Tools** | NLTK, spaCy |
+| **Visualization** | Matplotlib, Plotly, Recharts |
+| **Frontend** | React (Vite), Tailwind CSS |
+| **Backend** | Flask |
+| **Deployment** | Docker, Nginx |
 | **Version Control** | Git, Git LFS |
-| **Deployment** | Flask, Render / Docker |
 
-# 📊 Dataset
-- **Source:** Amazon Product Reviews Dataset (via [Kaggle](https://www.kaggle.com/datasets) 
-- **Format:** CSV files containing review text and ratings.
-- **Location:** Stored under `data/raw/`
+---
 
-| Column | Description |
-|---------|--------------|
-| `reviewText` | Customer review text |
-| `overall` | Numeric rating (1–5) |
-| `sentiment` | Label (Positive / Neutral / Negative) |
+## 📊 Dataset
+- **Source:** Amazon Product Reviews Dataset ([Kaggle](https://www.kaggle.com/datasets))  
+- **Format:** CSV with text and ratings.  
+- **Columns:**
+  | Column | Description |
+  |---------|--------------|
+  | `reviewText` | Customer review |
+  | `overall` | Numeric rating (1–5) |
+  | `sentiment` | Derived label (Positive / Neutral / Negative) |
 
-# ▶️ How to Run
+---
 
-### 1️⃣ create and activate virtual environment
+## ▶️ How to Run
 
+### 🧩 1. Backend (Flask API)
+```bash
+cd backend
 python -m venv venv
 venv\Scripts\activate
-
-
-### 2️⃣ install dependencies
-
 pip install -r requirements.txt
+flask run
+API will start at: http://127.0.0.1:5000
 
-### 3️⃣ run preprocessing
-
-python src/data/make_dataset.py
-
-### 4️⃣ Build features
-
-python -m src.features.build_features
-
-### 5️⃣ Train models
-
-python -m src.models.train_model
-
-### (Optional) Train multiple models and compare
-
-python -m src.models.multiple_models
-
-### 6️⃣ Run predictions on new data
-
-python -m src.models.predict_model
-
-### ⚠️ Troubleshooting: "npm error could not determine executable to run" (Windows / frontend)
-If `npx tailwindcss init -p` fails with "could not determine executable to run" or "'tailwindcss' is not recognized", follow these steps from the frontend folder:
-
-1. Verify Node/npm are installed:
-```bash
-node -v
-npm -v
-```
-
-2. Ensure you're in the frontend folder and package.json exists:
-```bash
+💻 2. Frontend (React + Vite)
+bash
+Copy code
 cd frontend
-dir package.json   # use ls package.json on WSL/mac
-# If missing:
-npm init -y
-```
+npm install
+npm run dev
+Frontend will run at: http://localhost:5173
 
-3. Install Tailwind and PostCSS locally:
-```bash
-npm install -D tailwindcss postcss autoprefixer
-```
+🔗 3. API Integration
+The React frontend sends POST requests to:
 
-4. Initialize Tailwind (pick one command if one fails):
-```bash
-npx tailwindcss init -p
-# If npx still errors, try:
-npm exec --package tailwindcss tailwindcss init -p
-# or
-npx --package tailwindcss@latest tailwindcss init -p
-```
+arduino
+Copy code
+http://127.0.0.1:5000/api/predict
+Example response:
 
-5. If you see "'tailwindcss' is not recognized..." or persistent npx errors:
-```bash
-npm cache verify
-# or (if necessary)
-npm cache clean --force
-# Try running the same commands in cmd.exe or Windows Terminal (not an unusual/isolated shell).
-```
+json
+Copy code
+{
+  "review": "The product quality is amazing!",
+  "sentiment": "positive"
+}
+🧱 Docker Setup
+🐍 Backend (Dockerfile.backend)
+Build and run:
 
-6. If none of the above fixes it, open the npm debug log referenced in the error (example path shown in your error):
-C:\Users\<your-user>\AppData\Local\npm-cache\_logs\<timestamp>-debug-0.log
+bash
+Copy code
+docker build -t sentiment-backend -f Dockerfile.backend .
+docker run -p 5000:5000 sentiment-backend
+⚛️ Frontend (Dockerfile.frontend)
+Build and run:
 
-Then paste the last ~50 lines here and I'll help diagnose further.
+bash
+Copy code
+docker build -t sentiment-frontend -f Dockerfile.frontend .
+docker run -p 5173:80 sentiment-frontend
+🧩 Optional (Compose Both)
+yaml
+Copy code
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+Run both together:
 
-# 📈 Results
+bash
+Copy code
+docker-compose up --build
+📈 Results
+Model	Accuracy	F1-Score
+Logistic Regression	93.7%	0.93
+Random Forest	95.3%	0.95
+XGBoost	95%+	0.95
 
-      Model	                    Accuracy	    F1-Score
+✅ Random Forest achieved the best overall accuracy.
+✅ XGBoost maintained strong precision-recall balance.
 
--Logistic Regression	        ~93.7%	           0.93
--Random   Forest	            ~95.3%	           0.95
--XGBoost 	                    ~95%+              0.95
+Visualizations and reports are stored under /experiments.
 
-- Random Forest achieved the highest accuracy among the tested models.
+🎨 Dashboard Overview
+The Amazon Sentiment Dashboard provides:
 
-- XGBoost provided balanced performance across precision and recall.
+A clean, modern UI built with React + TailwindCSS.
 
-- Insights and prediction reports are available in the reports/ directory.
+Text input for user reviews.
 
-# 🚀 Future Enhancements
+Real-time sentiment predictions via Flask API.
 
-- Incorporate deep learning models (e.g., LSTM, BERT).
+Placeholder section for live sentiment distribution charts (via Recharts).
 
-- Build an interactive dashboard to visualize sentiment trends.
+Amazon-inspired design theme with yellow and gray tones.
 
-- Deploy API endpoint using Flask or FastAPI.
+🚀 Future Enhancements
+Integrate interactive charts (Pie/Bar) to display sentiment trends.
 
-- Automate model retraining using a CI/CD pipeline.
+Add user review upload (CSV input).
+
+Expand to deep learning models (LSTM / BERT).
+
+Integrate Gunicorn + Nginx for production deployment.
+
+Add CI/CD pipeline for automated builds and model updates.
+
+Deploy full-stack app via Docker Compose or cloud (Render, AWS).
+
 
 # 🧑‍💻 Author
 
